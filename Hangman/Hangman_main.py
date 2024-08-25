@@ -1,24 +1,35 @@
-
+# Step 1
 import random
-
-def print_blanks(length: int):
-    print("_" * length)
-
-def word_has_letter(word: str, char: chr) -> bool:
-    for a in word:
-        if a == char:
-            return True
-    return False
-
 
 word_list = ["aardvark", "baboon", "camel"]
 
+# TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
 chosen_word = random.choice(word_list)
-print_blanks(len(chosen_word))
 
-guess_line = input("Guess a letter: ").lower()
-guess = guess_line[0]
+# TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
+display = ""
+placeholder = ""
+guess = input("Guess a letter: ").lower()
+# TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
+length_of_chword = len(chosen_word)
+# for a in range(0,length_of_chword):
+# placeholder = length_of_chword * "_"
+# print(placeholder)
+for b in range(length_of_chword):
+    placeholder += "_"
+print(placeholder)
 
-print(word_has_letter(chosen_word, guess))
+for i in range(length_of_chword):
+    if guess == chosen_word[i]:
+        placeholder[i] = guess
+print(placeholder)
+
+
+
+
+
+
+
+
 
 
